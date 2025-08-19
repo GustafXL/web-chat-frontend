@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 export function Room() {
   const { id } = useParams();
@@ -28,7 +28,7 @@ export function Room() {
   if (error) {
     return (
       <div className="flex items-center justify-center p-4">
-        <div className="text-red-500">Error: {error.message}</div>
+        <Navigate replace to="/" />
       </div>
     );
   }
